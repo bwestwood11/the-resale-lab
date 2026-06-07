@@ -1,0 +1,311 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "The Resale Lab" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e6]:
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: "#about"
+        - link "Our Work" [ref=e8] [cursor=pointer]:
+          - /url: "#pillars"
+        - link "Software" [ref=e9] [cursor=pointer]:
+          - /url: "#crosslisting"
+        - link "Content" [ref=e10] [cursor=pointer]:
+          - /url: "#content"
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Get in Touch" [ref=e13] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]: Crosslisting software in development
+        - heading "List once. Sell on every marketplace." [level=1] [ref=e21]:
+          - text: List once.
+          - text: Sell on every
+          - text: marketplace.
+        - paragraph [ref=e22]: The Resale Lab combines crosslisting software, real-world resale operations, and content creation to help modern resellers move faster and grow smarter.
+        - generic [ref=e23]:
+          - link "Explore Our Work" [ref=e24] [cursor=pointer]:
+            - /url: "#pillars"
+            - text: Explore Our Work
+            - img
+          - link "Follow Our Journey" [ref=e25] [cursor=pointer]:
+            - /url: "#content"
+        - generic [ref=e26]:
+          - paragraph [ref=e27]: Listing to
+          - generic [ref=e28]:
+            - generic [ref=e29]: eBay
+            - generic [ref=e30]: Mercari
+            - generic [ref=e31]: Poshmark
+            - generic [ref=e32]: Depop
+            - generic [ref=e33]: Facebook
+            - generic [ref=e34]: + 3 more
+      - generic [ref=e37]:
+        - generic [ref=e38]: +42 synced today
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e44]: Live Crosslisting Queue
+            - generic [ref=e45]: 3 active
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e49]:
+                - paragraph [ref=e50]: Vintage Denim Jacket
+                - generic [ref=e51]:
+                  - generic [ref=e52]: eBay
+                  - generic [ref=e53]: Poshmark
+                  - generic [ref=e54]: Depop
+              - generic [ref=e55]:
+                - img [ref=e56]
+                - text: Published
+            - generic [ref=e59]:
+              - generic [ref=e61]:
+                - paragraph [ref=e62]: Nike Air Max 90
+                - generic [ref=e63]:
+                  - generic [ref=e64]: eBay
+                  - generic [ref=e65]: Mercari
+              - generic [ref=e66]:
+                - img [ref=e67]
+                - text: Publishing…
+            - generic [ref=e72]:
+              - generic [ref=e74]:
+                - paragraph [ref=e75]: Coach Mini Backpack
+                - generic [ref=e77]: Poshmark
+              - generic [ref=e78]:
+                - img [ref=e79]
+                - text: Needs review
+          - generic [ref=e81]:
+            - generic [ref=e82]: Synced 12s ago
+            - generic [ref=e83]: View all →
+        - generic [ref=e84]:
+          - img [ref=e86]
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: All platforms live
+            - paragraph [ref=e91]: 8 channels connected
+    - generic [ref=e94]:
+      - paragraph [ref=e95]: Built for resellers on
+      - generic [ref=e97]:
+        - generic [ref=e98]: eBay
+        - generic [ref=e99]: Mercari
+        - generic [ref=e100]: Poshmark
+        - generic [ref=e101]: Depop
+        - generic [ref=e102]: Facebook
+        - generic [ref=e103]: Etsy
+        - generic [ref=e104]: Vinted
+        - generic [ref=e105]: Amazon
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]: About Us
+        - heading "A resale company built around technology, operations, and growth." [level=2] [ref=e111]
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - paragraph [ref=e114]: "3"
+            - paragraph [ref=e115]: Business verticals
+          - generic [ref=e116]:
+            - paragraph [ref=e117]: LLC
+            - paragraph [ref=e118]: Registered company
+          - generic [ref=e119]:
+            - paragraph [ref=e120]: 8+
+            - paragraph [ref=e121]: Target platforms
+      - generic [ref=e122]:
+        - paragraph [ref=e123]: "The Resale Lab, LLC is a registered business built around the modern resale economy. We operate across three interconnected verticals: software development, real-world resale operations, and content creation — all centered on the belief that reselling can be run like a real, scalable business."
+        - paragraph [ref=e124]: We don't just talk about reselling. We do it every day. We build tools to make it more efficient. And we document the journey so others can learn from what we discover along the way.
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]: What We Do
+        - heading "Three pillars. One company." [level=2] [ref=e129]
+        - paragraph [ref=e130]: Software powers operations. Operations fuel content. Content builds the brand. Every part of The Resale Lab reinforces the others.
+      - generic [ref=e131]:
+        - link "In Development Software Crosslisting App A platform that lets resellers list once and publish across eBay, Mercari, Depop, Poshmark, and more — saving hours every week and eliminating manual re-entry." [ref=e132] [cursor=pointer]:
+          - /url: "#crosslisting"
+          - generic [ref=e134]:
+            - img [ref=e136]
+            - generic [ref=e140]:
+              - generic [ref=e141]: In Development
+              - img [ref=e142]
+          - paragraph [ref=e145]: Software
+          - heading "Crosslisting App" [level=3] [ref=e146]
+          - paragraph [ref=e147]: A platform that lets resellers list once and publish across eBay, Mercari, Depop, Poshmark, and more — saving hours every week and eliminating manual re-entry.
+        - link "Active Operations Storage Unit Reselling We source inventory from abandoned storage unit auctions, sort through it systematically, and resell valuable items across online marketplaces." [ref=e148] [cursor=pointer]:
+          - /url: "#storage"
+          - generic [ref=e150]:
+            - img [ref=e152]
+            - generic [ref=e155]:
+              - generic [ref=e156]: Active
+              - img [ref=e157]
+          - paragraph [ref=e160]: Operations
+          - heading "Storage Unit Reselling" [level=3] [ref=e161]
+          - paragraph [ref=e162]: We source inventory from abandoned storage unit auctions, sort through it systematically, and resell valuable items across online marketplaces.
+        - link "Ongoing Content YouTube & Social We document our reselling journey — storage unit hauls, software builds, and the honest realities of building a resale business — through YouTube and social media." [ref=e163] [cursor=pointer]:
+          - /url: "#content"
+          - generic [ref=e165]:
+            - img [ref=e167]
+            - generic [ref=e169]:
+              - generic [ref=e170]: Ongoing
+              - img [ref=e171]
+          - paragraph [ref=e174]: Content
+          - heading "YouTube & Social" [level=3] [ref=e175]
+          - paragraph [ref=e176]: We document our reselling journey — storage unit hauls, software builds, and the honest realities of building a resale business — through YouTube and social media.
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - generic [ref=e181]: Crosslisting App
+        - heading "One listing. Eight platforms." [level=2] [ref=e182]:
+          - text: One listing.
+          - text: Eight platforms.
+        - paragraph [ref=e183]: We're building a crosslisting app designed specifically for resellers who need to move inventory fast. Built by resellers, for resellers — every feature solves a real problem we face ourselves.
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - img [ref=e187]
+            - generic [ref=e189]:
+              - heading "List once, publish everywhere" [level=3] [ref=e190]
+              - paragraph [ref=e191]: Fill out one form. We handle formatting, field mapping, and publishing to every platform simultaneously.
+          - generic [ref=e192]:
+            - img [ref=e194]
+            - generic [ref=e198]:
+              - heading "Unified inventory dashboard" [level=3] [ref=e199]
+              - paragraph [ref=e200]: Track every listing, across every platform, in one place. Know what's live, sold, and needs attention at a glance.
+          - generic [ref=e201]:
+            - img [ref=e203]
+            - generic [ref=e205]:
+              - heading "Smarter workflow automation" [level=3] [ref=e206]
+              - paragraph [ref=e207]: Automate title optimization, pricing rules, and category mapping — so you can focus on sourcing, not data entry.
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - paragraph [ref=e210]: Your listing draft
+          - generic [ref=e213]:
+            - paragraph [ref=e214]: Vintage Denim Jacket
+            - paragraph [ref=e215]: Size M · Good condition · $45
+        - img [ref=e219]
+        - generic [ref=e222]:
+          - paragraph [ref=e223]: Published across
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - img [ref=e226]
+              - text: eBay
+            - generic [ref=e229]:
+              - img [ref=e230]
+              - text: Mercari
+            - generic [ref=e233]:
+              - img [ref=e234]
+              - text: Poshmark
+            - generic [ref=e237]:
+              - img [ref=e238]
+              - text: Depop
+            - generic [ref=e241]: Facebook
+            - generic [ref=e243]: Etsy
+          - paragraph [ref=e245]: + 2 more platforms coming soon
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - generic [ref=e250]: Storage Unit Reselling
+        - heading "Real inventory. Real operations." [level=2] [ref=e251]:
+          - text: Real inventory.
+          - text: Real operations.
+        - paragraph [ref=e252]: Storage unit auctions are a proven, legitimate method of sourcing resale inventory. When tenants abandon their units, facilities auction the contents publicly. We participate, recover the inventory, and put it back into the market.
+        - paragraph [ref=e253]: "This is an operational business — not a hobby. We approach every unit with discipline: evaluate the opportunity, manage the cost, and execute the sale systematically."
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e257]: "01"
+          - generic [ref=e259]:
+            - heading "Auction Bidding" [level=3] [ref=e260]
+            - paragraph [ref=e261]: We identify and bid on abandoned storage units sold at public auction, evaluating potential resale value before committing.
+        - generic [ref=e262]:
+          - generic [ref=e264]: "02"
+          - generic [ref=e266]:
+            - heading "Inventory Sorting" [level=3] [ref=e267]
+            - paragraph [ref=e268]: Every unit is systematically sorted and assessed. We identify sellable items, document condition, and discard what isn't viable.
+        - generic [ref=e269]:
+          - generic [ref=e271]: "03"
+          - generic [ref=e272]:
+            - heading "Online Reselling" [level=3] [ref=e273]
+            - paragraph [ref=e274]: Sellable inventory is photographed, listed with accurate descriptions, and sold across eBay and other online marketplaces.
+    - generic [ref=e277]:
+      - generic [ref=e278]:
+        - generic [ref=e279]: Content & Social Media
+        - heading "Follow the journey." [level=2] [ref=e280]:
+          - text: Follow the
+          - text: journey.
+        - paragraph [ref=e281]: We document parts of our reselling operations and business growth through YouTube and social media — storage unit hauls, software updates, individual item flips, and an honest look at what building a resale business actually looks like.
+        - paragraph [ref=e282]: The content is real, not scripted. We share wins and setbacks alike — because that's what running a real business looks like.
+      - generic [ref=e283]:
+        - link "YouTube Storage unit hauls, reselling vlogs & business updates" [ref=e284] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e285]:
+            - generic [ref=e286]: YouTube
+            - generic [ref=e288]: Storage unit hauls, reselling vlogs & business updates
+          - img [ref=e289]
+        - link "Instagram Behind-the-scenes inventory & business highlights" [ref=e293] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e294]:
+            - generic [ref=e295]: Instagram
+            - generic [ref=e297]: Behind-the-scenes inventory & business highlights
+          - img [ref=e298]
+        - link "TikTok Short-form reselling content, finds & tips" [ref=e302] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e303]:
+            - generic [ref=e304]: TikTok
+            - generic [ref=e306]: Short-form reselling content, finds & tips
+          - img [ref=e307]
+        - paragraph [ref=e311]: Social channels launching soon — currently in active development.
+    - generic [ref=e313]:
+      - generic [ref=e314]:
+        - generic [ref=e315]: Why Trust Us
+        - heading "A real company. Real operations." [level=2] [ref=e316]
+        - paragraph [ref=e317]: The Resale Lab isn't a concept — it's an active business with registered legal standing, real inventory, and skin in the game.
+      - generic [ref=e318]:
+        - generic [ref=e319]:
+          - img [ref=e321]
+          - heading "Registered LLC" [level=3] [ref=e325]
+          - paragraph [ref=e326]: The Resale Lab is a formally registered limited liability company — not a side project or informal operation.
+        - generic [ref=e327]:
+          - img [ref=e329]
+          - heading "Real Inventory, Real Sales" [level=3] [ref=e333]
+          - paragraph [ref=e334]: We run active resale inventory purchased at auction and listed on live marketplace platforms. This is an operating business.
+        - generic [ref=e335]:
+          - img [ref=e337]
+          - heading "Software-Driven Operations" [level=3] [ref=e341]
+          - paragraph [ref=e342]: We use and build technology to run our operations — because the best tools get built by people who need them most.
+        - generic [ref=e343]:
+          - img [ref=e345]
+          - heading "Marketplace Experience" [level=3] [ref=e347]
+          - paragraph [ref=e348]: Hands-on experience selling on eBay, Mercari, and other platforms — not just theory, but operational knowledge.
+        - generic [ref=e349]:
+          - img [ref=e351]
+          - heading "Documented Journey" [level=3] [ref=e353]
+          - paragraph [ref=e354]: We make our progress public through content. Not just the wins — the full reality of building a business.
+        - generic [ref=e355]:
+          - img [ref=e357]
+          - heading "Built for the Long Term" [level=3] [ref=e360]
+          - paragraph [ref=e361]: Every decision is made with a sustainable, long-term business in mind — not short-term flipping.
+    - generic [ref=e365]:
+      - generic [ref=e366]: Contact
+      - heading "Get in touch." [level=2] [ref=e367]
+      - paragraph [ref=e368]: Interested in our software, want to collaborate, or have a question about our operations? We'd love to hear from you.
+      - link "contact@theresalelab.com" [ref=e369] [cursor=pointer]:
+        - /url: mailto:contact@theresalelab.com
+        - img
+        - text: contact@theresalelab.com
+        - img
+      - paragraph [ref=e370]: We typically respond within 1–2 business days.
+  - contentinfo [ref=e371]:
+    - generic [ref=e372]:
+      - generic [ref=e373]:
+        - generic [ref=e374]:
+          - paragraph [ref=e375]: The Resale Lab
+          - paragraph [ref=e376]: The Resale Lab, LLC
+        - navigation [ref=e377]:
+          - link "About" [ref=e378] [cursor=pointer]:
+            - /url: "#about"
+          - link "Software" [ref=e379] [cursor=pointer]:
+            - /url: "#crosslisting"
+          - link "Storage" [ref=e380] [cursor=pointer]:
+            - /url: "#storage"
+          - link "Content" [ref=e381] [cursor=pointer]:
+            - /url: "#content"
+          - link "Contact" [ref=e382] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e383]:
+        - paragraph [ref=e384]: © 2026 The Resale Lab, LLC. All rights reserved.
+        - link "contact@theresalelab.com" [ref=e385] [cursor=pointer]:
+          - /url: mailto:contact@theresalelab.com
+  - button "Open Next.js Dev Tools" [ref=e391] [cursor=pointer]:
+    - img [ref=e392]
