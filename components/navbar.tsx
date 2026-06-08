@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { label: "Operations", href: "#reselling" },
-  { label: "Software", href: "#software" },
+  { label: "Software", href: "https://omventa.com/" },
   { label: "Content", href: "#content" },
   { label: "About", href: "#about" },
 ]
@@ -51,13 +51,15 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="mailto:contact@theresalelab.com"
+              href="mailto:brett@resalelab.io"
               className="text-[11px] text-white/25 hover:text-white/50 transition-colors font-medium"
             >
-              contact@theresalelab.com
+              brett@resalelab.io
             </a>
             <a
-              href="#software"
+              href="https://omventa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center h-7 px-3.5 rounded-full text-[11px] font-black text-black transition-all hover:opacity-90 active:scale-95"
               style={{ background: "#f97316" }}
             >
@@ -99,13 +101,15 @@ export default function Navbar() {
               style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
             >
               <a
-                href="mailto:contact@theresalelab.com"
+                href="mailto:brett@resalelab.io"
                 className="text-xs text-white/25"
               >
-                contact@theresalelab.com
+                brett@resalelab.io
               </a>
               <a
-                href="#software"
+                href="https://omventa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="inline-flex justify-center h-9 items-center rounded-full text-sm font-black text-black"
                 style={{ background: "#f97316" }}

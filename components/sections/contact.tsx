@@ -60,7 +60,7 @@ export default function ContactSection() {
           </p>
 
           <a
-            href="mailto:contact@theresalelab.com"
+            href="mailto:brett@resalelab.io"
             className="inline-flex items-center justify-center gap-3 h-14 px-8 rounded-2xl text-base font-bold text-black transition-all hover:-translate-y-0.5"
             style={{
               background: "#f97316",
@@ -68,7 +68,7 @@ export default function ContactSection() {
             }}
           >
             <Mail className="size-5" />
-            contact@theresalelab.com
+            brett@resalelab.io
             <ArrowRight className="size-5" />
           </a>
 

@@ -5,7 +5,7 @@ const platforms = [
     name: "YouTube",
     handle: "@TheResaleLab",
     desc: "Full-length storage unit hauls, flip reveals, P&L breakdowns, and software build vlogs. The full story, uncut.",
-    href: "#",
+    href: "https://www.youtube.com/@TheResaleLab",
     color: "#ef4444",
     bg: "rgba(239,68,68,0.07)",
     border: "rgba(239,68,68,0.15)",
@@ -125,6 +125,7 @@ export default function ContentSection() {
               <a
                 key={platform.name}
                 href={platform.href}
+                {...(platform.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="group block p-5 rounded-2xl relative overflow-hidden transition-all duration-200"
                 style={{
                   background: platform.bg,

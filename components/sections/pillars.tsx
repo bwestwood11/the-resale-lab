@@ -40,7 +40,7 @@ const pillars: Pillar[] = [
     title: "Crosslisting App",
     desc: "List once, publish everywhere. We're building the crosslisting tool resellers actually need — built by people who flip inventory daily and test every feature on real listings.",
     status: "In Development",
-    href: "#software",
+    href: "https://omventa.com/",
     accent: "#f97316",
   },
 ]

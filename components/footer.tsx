@@ -12,14 +12,14 @@ const footerNav = [
     label: "Verticals",
     links: [
       { name: "Reselling", href: "#reselling" },
-      { name: "Software", href: "#software" },
+      { name: "Software", href: "https://omventa.com/" },
       { name: "Content", href: "#content" },
     ],
   },
   {
     label: "Social",
     links: [
-      { name: "YouTube", href: "#" },
+      { name: "YouTube", href: "https://www.youtube.com/@TheResaleLab" },
       { name: "TikTok", href: "#" },
       { name: "Facebook", href: "#" },
     ],
@@ -49,10 +49,10 @@ export default function Footer() {
               content. A registered LLC.
             </p>
             <a
-              href="mailto:contact@theresalelab.com"
+              href="mailto:brett@resalelab.io"
               className="text-sm text-orange-500 hover:text-orange-400 transition-colors font-semibold"
             >
-              contact@theresalelab.com
+              brett@resalelab.io
             </a>
           </div>
 
@@ -67,6 +67,7 @@ export default function Footer() {
                     <a
                       key={link.name}
                       href={link.href}
+                      {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       className="text-sm text-zinc-500 hover:text-white transition-colors"
                     >
                       {link.name}

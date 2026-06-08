@@ -1,8 +1,8 @@
 const stats = [
-  { value: "100+", label: "Items Flipped", note: "and growing" },
+  { value: "1,000+", label: "Items Flipped", note: "and growing" },
   { value: "8+", label: "Target Platforms", note: "for crosslisting" },
   { value: "3", label: "Business Verticals", note: "ops · software · content" },
-  { value: "LLC", label: "Registered", note: "The Resale Lab, LLC" },
+  { value: "6+", label: "Flipping", note: "experience" },
 ]
 
 export default function StatsSection() {

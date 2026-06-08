@@ -1,3 +1,4 @@
+import Image from "next/image"
 import {
   ArrowRight,
   CheckCircle2,
@@ -241,7 +242,7 @@ export default function HeroSection() {
                 </span>
               </div>
               <span className="text-[10px] font-bold text-white/20 tracking-widest uppercase">
-                Est. 2024
+                Est. 2026
               </span>
             </div>
 
@@ -264,7 +265,7 @@ export default function HeroSection() {
                   backgroundClip: "text",
                 }}
               >
-                Everywhere.
+                Everywhere
               </span>
             </h1>
 
@@ -308,7 +309,9 @@ export default function HeroSection() {
                 <ArrowRight className="ml-2 size-4" />
               </a>
               <a
-                href="#software"
+                href="https://omventa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-11 px-6 rounded-xl text-sm font-semibold text-white border border-white/[0.1] transition-all hover:border-white/[0.2]"
                 style={{ background: "rgba(255,255,255,0.03)" }}
               >
@@ -334,24 +337,37 @@ export default function HeroSection() {
           <p className="text-[10px] font-bold text-white/20 tracking-widest uppercase mb-4">
             Crosslisting To
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             {[
-              "eBay",
-              "Mercari",
-              "Poshmark",
-              "Depop",
-              "Facebook Marketplace",
-              "Etsy",
-              "+ More Platforms",
-            ].map((p) => (
-              <span
-                key={p}
-                className="px-3 py-1 rounded-full text-[11px] font-semibold text-white/30 border border-white/[0.07]"
-                style={{ background: "rgba(255,255,255,0.02)" }}
+              { name: "eBay", src: "/ebay.png", width: 48, height: 20 },
+              { name: "Mercari", src: "/Mercari.svg", width: 72, height: 20 },
+              { name: "Poshmark", src: "/Poshmark.png", width: 80, height: 20 },
+              { name: "Depop", src: "/Depop.png", width: 52, height: 20 },
+              { name: "Facebook Marketplace", src: "/Facebook.png", width: 24, height: 24 },
+              { name: "Etsy", src: "/Etsy.png", width: 48, height: 20 },
+            ].map((platform) => (
+              <div
+                key={platform.name}
+                className="flex items-center justify-center px-3 py-2 rounded-lg border border-white/[0.07]"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+                title={platform.name}
               >
-                {p}
-              </span>
+                <Image
+                  src={platform.src}
+                  alt={platform.name}
+                  width={platform.width}
+                  height={platform.height}
+                  className="opacity-40 object-contain"
+                  style={{ maxHeight: "20px", width: "auto" }}
+                />
+              </div>
             ))}
+            <span
+              className="px-3 py-2 rounded-lg text-[11px] font-semibold text-white/20 border border-white/[0.07]"
+              style={{ background: "rgba(255,255,255,0.03)" }}
+            >
+              + More
+            </span>
           </div>
         </div>
       </div>
