@@ -1,13 +1,12 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import HeroSection from "@/components/sections/hero"
-import PlatformsSection from "@/components/sections/platforms"
-import AboutSection from "@/components/sections/about"
+import StatsSection from "@/components/sections/stats"
 import PillarsSection from "@/components/sections/pillars"
-import CrosslistingSection from "@/components/sections/crosslisting"
 import StorageSection from "@/components/sections/storage"
+import CrosslistingSection from "@/components/sections/crosslisting"
 import ContentSection from "@/components/sections/content"
-import TrustSection from "@/components/sections/trust"
+import AboutSection from "@/components/sections/about"
 import ContactSection from "@/components/sections/contact"
 
 export default function Home() {
@@ -16,13 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <PlatformsSection />
-        <AboutSection />
+        <StatsSection />
         <PillarsSection />
-        <CrosslistingSection />
         <StorageSection />
+        <CrosslistingSection />
         <ContentSection />
-        <TrustSection />
+        <AboutSection />
         <ContactSection />
       </main>
       <Footer />

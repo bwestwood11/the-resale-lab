@@ -5,79 +5,114 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Our Work", href: "#pillars" },
-  { label: "Software", href: "#crosslisting" },
+  { label: "Operations", href: "#reselling" },
+  { label: "Software", href: "#software" },
   { label: "Content", href: "#content" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about" },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-white/[0.07]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-[17px] font-bold text-white tracking-tight">
-            The{" "}
-            <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-              Resale
-            </span>{" "}
-            Lab
+    <header
+      className="fixed top-0 inset-x-0 z-50"
+      style={{
+        background: "rgba(8,8,8,0.92)",
+        backdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="flex items-center gap-2.5 select-none">
+            <div
+              className="w-7 h-7 rounded-md flex items-center justify-center text-[10px] font-black text-black tracking-tight shrink-0"
+              style={{ background: "#f97316" }}
+            >
+              TRL
+            </div>
+            <span className="hidden sm:block text-sm font-bold text-white tracking-tight">
+              The Resale Lab
+            </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/50 hover:text-white/90 transition-colors duration-150"
+                className="text-[11px] font-bold text-white/40 hover:text-white transition-colors tracking-[0.12em] uppercase"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
             <a
-              href="#contact"
-              className="inline-flex items-center h-8 px-4 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-colors"
+              href="mailto:contact@theresalelab.com"
+              className="text-[11px] text-white/25 hover:text-white/50 transition-colors font-medium"
             >
-              Get in Touch
+              contact@theresalelab.com
+            </a>
+            <a
+              href="#software"
+              className="inline-flex items-center h-7 px-3.5 rounded-full text-[11px] font-black text-black transition-all hover:opacity-90 active:scale-95"
+              style={{ background: "#f97316" }}
+            >
+              Software Waitlist
             </a>
           </div>
 
           <button
-            className="md:hidden text-white/60 hover:text-white transition-colors"
+            className="md:hidden text-white/50 hover:text-white transition-colors"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden bg-zinc-950 border-t border-white/[0.07]">
+        <div
+          className="md:hidden"
+          style={{
+            background: "rgba(8,8,8,0.98)",
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+          }}
+        >
           <nav className="flex flex-col px-6 py-5 gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/55 hover:text-white transition-colors"
                 onClick={() => setOpen(false)}
+                className="text-sm text-white/45 hover:text-white transition-colors font-medium"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center h-9 px-4 rounded-lg bg-orange-500 text-white text-sm font-semibold mt-1"
-              onClick={() => setOpen(false)}
+            <div
+              className="pt-3 flex flex-col gap-3"
+              style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
             >
-              Get in Touch
-            </a>
+              <a
+                href="mailto:contact@theresalelab.com"
+                className="text-xs text-white/25"
+              >
+                contact@theresalelab.com
+              </a>
+              <a
+                href="#software"
+                onClick={() => setOpen(false)}
+                className="inline-flex justify-center h-9 items-center rounded-full text-sm font-black text-black"
+                style={{ background: "#f97316" }}
+              >
+                Software Waitlist
+              </a>
+            </div>
           </nav>
         </div>
       )}

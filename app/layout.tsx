@@ -1,52 +1,60 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
+import type { Metadata } from "next"
+import { Geist, Geist_Mono, Inter, Barlow_Condensed } from "next/font/google"
+import "./globals.css"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: "--font-display",
+  weight: ["700", "900"],
+  style: ["normal"],
+})
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "The Resale Lab — Building the Future of Reselling",
+  title: "The Resale Lab — Storage Unit Flipping, Crosslisting Software & Reselling Content",
   description:
-    "The Resale Lab, LLC is a registered resale company combining crosslisting software, storage unit operations, and content creation to help modern resellers grow smarter.",
+    "The Resale Lab, LLC is a registered resale business combining storage unit auction sourcing, crosslisting software for eBay, Mercari, Poshmark & Depop, and authentic reselling content on YouTube and TikTok.",
   keywords: [
     "reselling",
     "crosslisting software",
     "storage unit reselling",
-    "resale business",
+    "storage unit auction",
     "eBay reseller",
-    "Mercari",
-    "Poshmark",
+    "Mercari crosslist",
+    "Poshmark seller",
+    "Depop listings",
+    "Facebook Marketplace flipping",
+    "resale business",
   ],
   openGraph: {
-    title: "The Resale Lab",
+    title: "The Resale Lab — The Full Stack Resale Company",
     description:
-      "Building the future of reselling — software, operations, and content.",
+      "Storage unit flipping, crosslisting software, and authentic reselling content. A registered LLC.",
     type: "website",
   },
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        "h-full antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        inter.variable,
+        barlowCondensed.variable,
+        "font-sans"
+      )}
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
-  );
+  )
 }

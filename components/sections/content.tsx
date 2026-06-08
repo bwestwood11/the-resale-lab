@@ -3,86 +3,179 @@ import { ExternalLink } from "lucide-react"
 const platforms = [
   {
     name: "YouTube",
-    description: "Storage unit hauls, reselling vlogs & business updates",
+    handle: "@TheResaleLab",
+    desc: "Full-length storage unit hauls, flip reveals, P&L breakdowns, and software build vlogs. The full story, uncut.",
     href: "#",
-    pill: "bg-red-500/10 text-red-400 border-red-500/20",
-    dot: "bg-red-500",
-  },
-  {
-    name: "Instagram",
-    description: "Behind-the-scenes inventory & business highlights",
-    href: "#",
-    pill: "bg-pink-500/10 text-pink-400 border-pink-500/20",
-    dot: "bg-pink-500",
+    color: "#ef4444",
+    bg: "rgba(239,68,68,0.07)",
+    border: "rgba(239,68,68,0.15)",
+    type: "Long-form video",
   },
   {
     name: "TikTok",
-    description: "Short-form reselling content, finds & tips",
+    handle: "@theresalelab",
+    desc: "Quick flip reveals, reselling tips, before-and-after storage unit finds, and bite-sized reselling content.",
     href: "#",
-    pill: "bg-white/5 text-white/50 border-white/10",
-    dot: "bg-white/30",
+    color: "rgba(255,255,255,0.55)",
+    bg: "rgba(255,255,255,0.025)",
+    border: "rgba(255,255,255,0.08)",
+    type: "Short-form video",
   },
+  {
+    name: "Facebook",
+    handle: "The Resale Lab",
+    desc: "Community updates, Facebook Marketplace sourcing content, and business highlights for the reselling community.",
+    href: "#",
+    color: "#60a5fa",
+    bg: "rgba(96,165,250,0.07)",
+    border: "rgba(96,165,250,0.15)",
+    type: "Community & posts",
+  },
+]
+
+const topics = [
+  "Storage unit hauls",
+  "Flip reveals",
+  "P&L breakdowns",
+  "Sourcing strategies",
+  "Software builds",
+  "Pricing for profit",
+  "Facebook Marketplace",
+  "eBay tips & tricks",
 ]
 
 export default function ContentSection() {
   return (
-    <section id="content" className="relative bg-zinc-900 py-28 overflow-hidden">
+    <section
+      id="content"
+      className="relative py-28 overflow-hidden"
+      style={{ background: "#111111" }}
+    >
+      <div
+        className="absolute top-0 inset-x-0 h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(249,115,22,0.2), transparent)",
+        }}
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 0% 50%, rgba(249,115,22,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 55% 65% at -5% 50%, rgba(249,115,22,0.06) 0%, transparent 60%)",
         }}
-        aria-hidden
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
+          {/* Left */}
           <div>
-            <span className="inline-block mb-4 text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">
-              Content & Social Media
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
-              Follow the
+            <p className="text-[10px] font-black text-orange-500 tracking-[0.3em] uppercase mb-4">
+              Pillar 02 · Content Creation
+            </p>
+            <h2
+              className="font-black uppercase leading-none text-white mb-5"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              }}
+            >
+              Follow
               <br />
-              <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                journey.
+              The{" "}
+              <span
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Hustle.
               </span>
             </h2>
-            <p className="text-zinc-400 text-[17px] leading-relaxed mb-5">
-              We document parts of our reselling operations and business growth
-              through YouTube and social media — storage unit hauls, software
-              updates, individual item flips, and an honest look at what building
-              a resale business actually looks like.
+            <p className="text-zinc-400 text-lg leading-relaxed mb-5">
+              We document the real side of reselling — the storage units, the hauls,
+              the flips, the software we&apos;re building, and the actual P&L. No scripted
+              drama. Just the business as it happens.
             </p>
-            <p className="text-zinc-400 text-[17px] leading-relaxed">
-              The content is real, not scripted. We share wins and setbacks alike
-              — because that&apos;s what running a real business looks like.
+            <p className="text-zinc-500 text-base leading-relaxed mb-8">
+              Channels launching soon. Subscribe and follow for authentic reselling
+              content from operators who are actually in the field every day.
             </p>
+
+            <div className="flex flex-wrap gap-2">
+              {topics.map((t) => (
+                <span
+                  key={t}
+                  className="px-3 py-1 rounded-full text-xs font-semibold text-white/30 border border-white/[0.07]"
+                  style={{ background: "rgba(255,255,255,0.02)" }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
+          {/* Right: Platform cards */}
           <div className="space-y-3">
             {platforms.map((platform) => (
               <a
                 key={platform.name}
                 href={platform.href}
-                className="group flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/8 hover:bg-white/[0.06] hover:border-white/15 transition-all duration-200"
+                className="group block p-5 rounded-2xl relative overflow-hidden transition-all duration-200"
+                style={{
+                  background: platform.bg,
+                  border: `1px solid ${platform.border}`,
+                }}
               >
-                <div className="flex items-center gap-4">
-                  <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-bold ${platform.pill}`}>
-                    <span className={`size-1.5 rounded-full ${platform.dot}`} />
-                    {platform.name}
+                <div
+                  className="absolute top-0 inset-x-0 h-px"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${platform.color}40, transparent)`,
+                  }}
+                />
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-bold"
+                      style={{
+                        background: `${platform.color}14`,
+                        color: platform.color,
+                        borderColor: `${platform.color}30`,
+                      }}
+                    >
+                      <span
+                        className="size-1.5 rounded-full"
+                        style={{ background: platform.color }}
+                      />
+                      {platform.name}
+                    </div>
+                    <span className="text-zinc-600 text-xs">{platform.handle}</span>
                   </div>
-                  <span className="text-zinc-500 text-sm">{platform.description}</span>
+                  <ExternalLink className="size-4 text-zinc-700 group-hover:text-orange-400 transition-colors shrink-0 mt-0.5" />
                 </div>
-                <ExternalLink className="size-4 text-zinc-700 group-hover:text-orange-400 transition-colors shrink-0 ml-3" />
+                <p className="text-zinc-500 text-sm leading-relaxed mt-3">
+                  {platform.desc}
+                </p>
+                <div
+                  className="flex items-center justify-between mt-4 pt-3"
+                  style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+                >
+                  <span className="text-[10px] text-zinc-700 font-semibold uppercase tracking-wider">
+                    {platform.type}
+                  </span>
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-wider"
+                    style={{ color: "rgba(249,115,22,0.5)" }}
+                  >
+                    Launching Soon
+                  </span>
+                </div>
               </a>
             ))}
-
-            <p className="text-zinc-700 text-xs pt-1 px-1">
-              Social channels launching soon — currently in active development.
-            </p>
           </div>
 
         </div>

@@ -1,132 +1,207 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2, RefreshCw, AlertCircle } from "lucide-react"
+import {
+  ArrowRight,
+  CheckCircle2,
+  RefreshCw,
+  AlertCircle,
+  Package,
+  TrendingUp,
+  Zap,
+} from "lucide-react"
+
+type ListingStatus = "live" | "syncing" | "review"
 
 const mockListings = [
   {
-    name: "Vintage Denim Jacket",
-    platforms: ["eBay", "Poshmark", "Depop"],
-    status: "published" as const,
-    color: "bg-gradient-to-br from-amber-600 to-orange-700",
+    name: "Vintage Levi's 501",
+    sub: "Size M · Good condition",
+    platforms: ["eBay", "Depop", "Posh"],
+    status: "live" as ListingStatus,
+    color: "from-amber-700 to-orange-800",
+    price: "$68",
   },
   {
     name: "Nike Air Max 90",
+    sub: "2023 · Worn twice",
     platforms: ["eBay", "Mercari"],
-    status: "publishing" as const,
-    color: "bg-gradient-to-br from-blue-600 to-indigo-700",
+    status: "syncing" as ListingStatus,
+    color: "from-sky-700 to-blue-800",
+    price: "$145",
   },
   {
     name: "Coach Mini Backpack",
+    sub: "Classic · Excellent",
     platforms: ["Poshmark"],
-    status: "review" as const,
-    color: "bg-gradient-to-br from-emerald-600 to-teal-700",
+    status: "review" as ListingStatus,
+    color: "from-emerald-700 to-teal-800",
+    price: "$55",
   },
 ]
 
-const targetPlatforms = ["eBay", "Mercari", "Poshmark", "Depop", "Facebook"]
-
-function StatusBadge({ status }: { status: "published" | "publishing" | "review" }) {
-  if (status === "published") {
+function StatusBadge({ status }: { status: ListingStatus }) {
+  if (status === "live")
     return (
-      <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-400 shrink-0">
+      <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-400">
         <CheckCircle2 className="size-3" />
-        Published
+        Live
       </span>
     )
-  }
-  if (status === "publishing") {
+  if (status === "syncing")
     return (
-      <span className="flex items-center gap-1 text-[11px] font-medium text-orange-400 shrink-0">
+      <span className="flex items-center gap-1 text-[10px] font-bold text-orange-400">
         <RefreshCw className="size-3 animate-spin" />
-        Publishing…
+        Syncing
       </span>
     )
-  }
   return (
-    <span className="flex items-center gap-1 text-[11px] font-medium text-amber-400 shrink-0">
+    <span className="flex items-center gap-1 text-[10px] font-bold text-amber-400">
       <AlertCircle className="size-3" />
-      Needs review
+      Review
     </span>
   )
 }
 
-function AppMockup() {
+function DashboardMockup() {
   return (
-    <div className="relative w-full max-w-sm mx-auto lg:max-w-none">
-      {/* Floating activity pill */}
-      <div className="absolute -top-4 -right-2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/40 text-white text-xs font-semibold whitespace-nowrap">
-        <span className="size-1.5 rounded-full bg-white animate-pulse" />
-        +42 synced today
+    <div className="relative" style={{ transform: "rotate(-1.5deg)" }}>
+      {/* Floating profit badge */}
+      <div
+        className="absolute -top-4 -right-2 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white text-xs font-bold whitespace-nowrap"
+        style={{
+          background: "rgb(16,185,129)",
+          boxShadow: "0 8px 24px rgba(16,185,129,0.35)",
+        }}
+      >
+        <TrendingUp className="size-3" />
+        +$312 this week
       </div>
 
-      {/* Main dashboard card */}
-      <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-2xl shadow-black/60 overflow-hidden">
-        {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-white/8">
-          <div className="flex items-center gap-2">
-            <span className="size-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/60" />
-            <span className="text-[11px] font-bold text-white/60 tracking-widest uppercase">
-              Live Crosslisting Queue
-            </span>
-          </div>
-          <span className="text-[11px] text-white/30 font-medium">3 active</span>
+      {/* Main window */}
+      <div
+        className="rounded-2xl overflow-hidden"
+        style={{
+          background: "rgba(18,18,20,0.97)",
+          border: "1px solid rgba(255,255,255,0.1)",
+          boxShadow:
+            "0 32px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)",
+        }}
+      >
+        {/* Window chrome */}
+        <div
+          className="flex items-center gap-1.5 px-4 py-3"
+          style={{
+            borderBottom: "1px solid rgba(255,255,255,0.07)",
+            background: "rgba(255,255,255,0.02)",
+          }}
+        >
+          <span className="size-2.5 rounded-full bg-red-500/60" />
+          <span className="size-2.5 rounded-full bg-yellow-500/60" />
+          <span className="size-2.5 rounded-full bg-green-500/60" />
+          <span className="ml-3 text-[10px] font-bold text-white/25 tracking-widest uppercase">
+            Crosslist Pro · Active
+          </span>
+          <span className="ml-auto text-[10px] text-white/20">3 items</span>
         </div>
 
-        {/* Listing items */}
-        <div className="divide-y divide-white/[0.05]">
-          {mockListings.map((item) => (
-            <div key={item.name} className="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.03] transition-colors">
-              <div className={`w-9 h-9 rounded-lg shrink-0 ${item.color}`} />
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-white truncate">{item.name}</p>
-                <div className="flex items-center gap-1 mt-0.5">
-                  {item.platforms.map((p) => (
-                    <span
-                      key={p}
-                      className="text-[10px] font-medium text-white/35 bg-white/5 px-1.5 py-px rounded"
-                    >
-                      {p}
-                    </span>
-                  ))}
-                </div>
+        {/* Rows */}
+        {mockListings.map((item, i) => (
+          <div
+            key={item.name}
+            className="flex items-center gap-3 px-4 py-3"
+            style={{
+              borderBottom:
+                i < mockListings.length - 1
+                  ? "1px solid rgba(255,255,255,0.04)"
+                  : "none",
+            }}
+          >
+            <div
+              className={`w-9 h-9 rounded-xl shrink-0 bg-gradient-to-br ${item.color}`}
+            />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-white truncate">
+                {item.name}
+              </p>
+              <div className="flex items-center gap-1 mt-0.5">
+                {item.platforms.map((p) => (
+                  <span
+                    key={p}
+                    className="text-[10px] font-medium text-white/30 px-1.5 py-px rounded"
+                    style={{ background: "rgba(255,255,255,0.05)" }}
+                  >
+                    {p}
+                  </span>
+                ))}
               </div>
+            </div>
+            <div className="text-right shrink-0">
+              <p className="text-sm font-bold text-white">{item.price}</p>
               <StatusBadge status={item.status} />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
-        {/* Footer */}
-        <div className="flex items-center justify-between px-4 py-2.5 bg-white/[0.02] border-t border-white/[0.05]">
-          <span className="text-[11px] text-white/25">Synced 12s ago</span>
-          <span className="text-[11px] text-orange-400/80 font-medium">View all →</span>
+        {/* Footer bar */}
+        <div
+          className="flex items-center justify-between px-4 py-2.5"
+          style={{
+            background: "rgba(255,255,255,0.02)",
+            borderTop: "1px solid rgba(255,255,255,0.05)",
+          }}
+        >
+          <div className="flex items-center gap-1.5">
+            <Package className="size-3 text-orange-400" />
+            <span className="text-[10px] text-white/25">8 platforms connected</span>
+          </div>
+          <span className="text-[10px] font-semibold" style={{ color: "rgba(249,115,22,0.7)" }}>
+            View all →
+          </span>
         </div>
       </div>
 
-      {/* Floating mini status card */}
-      <div className="absolute -bottom-5 -left-5 flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-white/10 shadow-xl shadow-black/50">
-        <div className="size-7 rounded-lg bg-emerald-500/15 flex items-center justify-center">
-          <CheckCircle2 className="size-3.5 text-emerald-400" />
+      {/* Floating bottom badge */}
+      <div
+        className="absolute -bottom-5 -left-4 flex items-center gap-2.5 px-3 py-2 rounded-xl"
+        style={{
+          background: "rgb(24,24,27)",
+          border: "1px solid rgba(255,255,255,0.1)",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+        }}
+      >
+        <div
+          className="size-7 rounded-lg flex items-center justify-center"
+          style={{ background: "rgba(249,115,22,0.12)" }}
+        >
+          <Zap className="size-3.5 text-orange-400" />
         </div>
         <div>
-          <p className="text-[11px] font-semibold text-white leading-none">All platforms live</p>
-          <p className="text-[10px] text-white/30 mt-0.5">8 channels connected</p>
+          <p className="text-[11px] font-bold text-white leading-none">
+            Listed to 3 markets
+          </p>
+          <p className="text-[10px] text-white/30 mt-0.5">Auto-synced · just now</p>
         </div>
       </div>
     </div>
   )
 }
 
+const pillars = [
+  { num: "01", label: "Storage Units" },
+  { num: "02", label: "Content Creation" },
+  { num: "03", label: "Crosslisting Software" },
+]
+
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative bg-zinc-950 min-h-screen flex items-center overflow-hidden"
+      className="relative overflow-hidden min-h-screen flex items-center"
+      style={{ background: "#080808" }}
     >
-      {/* Dot grid */}
+      {/* Noise texture */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-50"
+        className="absolute inset-0 pointer-events-none opacity-[0.18]"
         style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
         }}
       />
       {/* Orange glow */}
@@ -134,91 +209,150 @@ export default function HeroSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 65% 70% at -5% 60%, rgba(249,115,22,0.13) 0%, transparent 65%)",
+            "radial-gradient(ellipse 60% 65% at -5% 65%, rgba(249,115,22,0.17) 0%, transparent 65%)",
         }}
       />
-      {/* Top edge glow */}
+      {/* Top hairline */}
       <div
-        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        className="absolute top-0 inset-x-0 h-px"
         style={{
-          background: "linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.4) 40%, transparent 100%)",
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.6) 50%, transparent 100%)",
         }}
       />
 
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: Copy */}
           <div>
-            {/* Status pill */}
-            <div className="inline-flex items-center gap-2 mb-7 px-3 py-1.5 rounded-full border border-orange-500/25 bg-orange-500/8 text-orange-400 text-xs font-semibold">
-              <span className="size-1.5 rounded-full bg-orange-400 animate-pulse" />
-              Crosslisting software in development
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div
+                className="flex items-center gap-2 px-3 py-1.5 rounded border"
+                style={{
+                  background: "rgba(249,115,22,0.08)",
+                  borderColor: "rgba(249,115,22,0.25)",
+                }}
+              >
+                <span className="size-1.5 rounded-full bg-orange-400 animate-pulse" />
+                <span className="text-[10px] font-black text-orange-400 tracking-widest uppercase">
+                  The Resale Lab, LLC
+                </span>
+              </div>
+              <span className="text-[10px] font-bold text-white/20 tracking-widest uppercase">
+                Est. 2024
+              </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-[64px] font-bold text-white leading-[1.05] tracking-tight mb-6">
-              List once.
-              <br />
-              Sell on every
-              <br />
-              <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                marketplace.
+            {/* Headline — Barlow Condensed */}
+            <h1
+              className="font-black leading-none tracking-tight mb-6 uppercase"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(4rem, 10vw, 7.5rem)",
+              }}
+            >
+              <span className="block text-white">Buy Low.</span>
+              <span className="block text-white">Sell High.</span>
+              <span
+                className="block"
+                style={{
+                  background: "linear-gradient(135deg, #f97316 0%, #f59e0b 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Everywhere.
               </span>
             </h1>
 
-            <p className="text-lg text-white/50 leading-relaxed mb-8 max-w-lg">
-              The Resale Lab combines crosslisting software, real-world resale
-              operations, and content creation to help modern resellers move
-              faster and grow smarter.
+            <p
+              className="text-white/50 leading-relaxed mb-8 max-w-lg"
+              style={{ fontSize: "1.0625rem" }}
+            >
+              We source real inventory from abandoned storage unit auctions and
+              Facebook Marketplace, build crosslisting software to publish to 8+
+              platforms at once, and document the entire journey on YouTube and
+              TikTok.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
-              <Button
-                asChild
-                className="bg-orange-500 hover:bg-orange-600 text-white border-0 h-11 px-6 text-sm font-semibold rounded-lg shadow-lg shadow-orange-500/20"
-              >
-                <a href="#pillars">
-                  Explore Our Work
-                  <ArrowRight className="ml-2 size-4" />
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="border-white/12 text-white bg-transparent hover:bg-white/6 hover:border-white/20 hover:text-white h-11 px-6 text-sm font-semibold rounded-lg"
-              >
-                <a href="#content">Follow Our Journey</a>
-              </Button>
-            </div>
-
-            {/* Platform pills */}
-            <div>
-              <p className="text-[11px] text-white/25 uppercase tracking-widest mb-3 font-medium">
-                Listing to
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {targetPlatforms.map((p) => (
-                  <span
-                    key={p}
-                    className="px-3 py-1 rounded-full text-xs font-medium text-white/45 border border-white/8 bg-white/[0.03]"
-                  >
-                    {p}
+            {/* Pillar badges */}
+            <div className="flex flex-wrap gap-2 mb-9">
+              {pillars.map((p) => (
+                <div
+                  key={p.num}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/[0.08]"
+                  style={{ background: "rgba(255,255,255,0.03)" }}
+                >
+                  <span className="text-[10px] font-black text-orange-500 tabular-nums">
+                    #{p.num}
                   </span>
-                ))}
-                <span className="px-3 py-1 rounded-full text-xs font-medium text-white/25">
-                  + 3 more
-                </span>
-              </div>
+                  <span className="text-xs font-semibold text-white/40">{p.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#pillars"
+                className="inline-flex items-center justify-center h-11 px-6 rounded-xl text-sm font-bold text-black transition-all hover:-translate-y-0.5 active:translate-y-0"
+                style={{
+                  background: "#f97316",
+                  boxShadow: "0 8px 24px rgba(249,115,22,0.3)",
+                }}
+              >
+                See What We Do
+                <ArrowRight className="ml-2 size-4" />
+              </a>
+              <a
+                href="#software"
+                className="inline-flex items-center justify-center h-11 px-6 rounded-xl text-sm font-semibold text-white border border-white/[0.1] transition-all hover:border-white/[0.2]"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                Join Software Waitlist
+              </a>
             </div>
           </div>
 
-          {/* Right: App mockup */}
+          {/* Right: Mockup */}
           <div className="flex justify-center lg:justify-end pt-8 lg:pt-0">
-            <div className="w-full max-w-[340px]">
-              <AppMockup />
+            <div className="w-full max-w-[480px]">
+              <DashboardMockup />
             </div>
           </div>
 
+        </div>
+
+        {/* Platform strip */}
+        <div
+          className="mt-20 pt-8"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+        >
+          <p className="text-[10px] font-bold text-white/20 tracking-widest uppercase mb-4">
+            Crosslisting To
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "eBay",
+              "Mercari",
+              "Poshmark",
+              "Depop",
+              "Facebook Marketplace",
+              "Etsy",
+              "+ More Platforms",
+            ].map((p) => (
+              <span
+                key={p}
+                className="px-3 py-1 rounded-full text-[11px] font-semibold text-white/30 border border-white/[0.07]"
+                style={{ background: "rgba(255,255,255,0.02)" }}
+              >
+                {p}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
